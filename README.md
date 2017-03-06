@@ -1,5 +1,6 @@
-# postcss-filename-prefix
+[Forked from here](https://github.com/vmakhaev/postcss-filename-prefix) 
 
+# postcss-filename-prefix
 A [PostCSS](https://github.com/postcss/postcss) plugin to prefix classes with corresponding filenames  
 The idea is to isolate styles in framework components
 
@@ -45,6 +46,17 @@ var out = postcss()
           .process(css);
 ```
 
+### Using the `delimeter` option
+By default delimeter between prefix and class is dash character. You can setup any string like:
+```javascript
+filenamePrefix({delimeter: '__'})
+```
+
+### Using the `lowerCase` option
+Force using of lowecased prefix:
+```javascript
+filenamePrefix({lowercased: true})
+```
 ### Using the `ignore` option
 
 ```javascript

@@ -13,9 +13,10 @@ function fileNamePrefix (options = {}) {
       name = parts[parts.length - 2]
     }
 
-    if (ignoreFileName(name)) return
-
-    let prefix = name + '-'
+    if (ignoreFileName(name)) return;
+    const delimeter = options.delimeter;
+    const lowerCase = Boolean(options.lowerCase);
+    let prefix = `${lowerCase ? name.toLowerCase() : name}${delimeter ? delimeter : '-'}`;
 
     root.walkRules((rule) => {
       if (!rule.selectors) return rule

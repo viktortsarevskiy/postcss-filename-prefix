@@ -1,10 +1,12 @@
 {
-  "name": "postcss-filename-prefix",
-  "version": "0.3.0",
+  "name": "postcss-filename-prefixes",
+  "version": "0.3.1",
   "description": "Postcss plugin for prefixing classes with corresponding filenames",
   "keywords": [
     "css",
     "postcss",
+    "prefix",
+    "filename",
     "postcss-plugin"
   ],
   "main": "lib/index.js",
@@ -14,9 +16,9 @@
     "lint": "standard | snazzy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Vladimir Makhaev",
+  "author": "Viktor Tsarevskiy",
   "license": "MIT",
-  "repository": "vmakhaev/postcss-filename-prefix",
+  "repository": "viktortsarevskiy/postcss-filename-prefix",
   "dependencies": {
     "postcss": "5.x.x"
   },
