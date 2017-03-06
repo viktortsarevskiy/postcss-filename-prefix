@@ -55,7 +55,7 @@ filenamePrefix({delimeter: '__'})
 ### Using the `lowerCase` option
 Force using of lowecased prefix:
 ```javascript
-filenamePrefix({lowercased: true})
+filenamePrefix({lowerCase: true})
 ```
 ### Using the `ignore` option
 
