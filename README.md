@@ -30,7 +30,7 @@ Ignores:
 ## Installation
 
 ```
-npm install postcss-filename-prefix
+npm install postcss-filename-prefixes
 ```
 
 ## Usage
@@ -56,6 +56,13 @@ filenamePrefix({delimeter: '__'})
 Force using of lowecased prefix:
 ```javascript
 filenamePrefix({lowerCase: true})
+```
+
+### Using the `ignoreRoot` option
+Omit `.root` class
+
+```javascript
+filenamePrefix({ignoreRoot: true})
 ```
 ### Using the `ignore` option
 

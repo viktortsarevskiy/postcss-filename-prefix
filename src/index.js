@@ -27,7 +27,7 @@ function fileNamePrefix (options = {}) {
         return selector
           .split('.')
           .map((className) => {
-            if (className === 'root') return name
+            if (options.ignoreRoot && className === 'root') return name
 
             if (ignoreClassName(className, options)) return className
 
