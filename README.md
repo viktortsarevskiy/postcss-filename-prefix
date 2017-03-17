@@ -61,6 +61,9 @@ filenamePrefix({lowerCase: true})
 ### Using the `ignoreRoot` option
 Omit `.root` class
 
+### Using the `ignoreLowerCasedFileName` option
+Allow to use lowercase name for css file
+
 ```javascript
 filenamePrefix({ignoreRoot: true})
 ```

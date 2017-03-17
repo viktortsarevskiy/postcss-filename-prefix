@@ -13,10 +13,11 @@ function fileNamePrefix (options = {}) {
       name = parts[parts.length - 2]
     }
 
-    if (ignoreFileName(name)) return;
-    const delimeter = options.delimeter;
+    const ignoreLowerCasedFileName = Boolean(options.ignoreLowerCasedFileName);
+    if (!ignoreLowerCasedFileName && ignoreFileName(name)) return;
+    const delimeter = options.delimeter || '-';
     const lowerCase = Boolean(options.lowerCase);
-    let prefix = `${lowerCase ? name.toLowerCase() : name}${delimeter ? delimeter : '-'}`;
+    let prefix = `${lowerCase ? name.toLowerCase() : name}${delimeter}`;
 
     root.walkRules((rule) => {
       if (!rule.selectors) return rule
@@ -28,7 +29,7 @@ function fileNamePrefix (options = {}) {
           .split('.')
           .map((className) => {
             if (options.ignoreRoot && (className === 'root' || className.indexOf('root') > -1)) {
-              return (prefix + className).replace('root', '')
+              return (prefix.replace(new RegExp(delimeter+'$'), '') + className).replace('root', '')
             }
 
             if (ignoreClassName(className, options)) {
